@@ -1,0 +1,20 @@
+<h1>Kettler: Work Summary for Store </h1>
+<table>
+  <tr>
+    <th>Work Date</th> <th>Time</th> <th>Issue No.</th>
+    <th>Task/Project</th> <th>Description</th>
+  </tr>
+<% total_hours = 0.0 %>
+<% @work_logs.each do |log| %>
+  <tr>
+    <td><%= log.CREATED.strftime('%m/%d/%y') if log.CREATED %></td>
+    <% timeworked = (log.timeworked / 60.0 / 60.0) %>
+    <td><%= timeworked %></td>
+    <td width="60px"><%= log.jira_issue.pkey %></td>
+    <td><%= log.jira_issue.SUMMARY %></td>
+    <td><%= log.worklogbody %></td>
+  </tr>
+  <% total_hours +=  timeworked %>
+<% end %>
+</table>
+Total hours: <%= total_hours %>
