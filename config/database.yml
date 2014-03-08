@@ -23,4 +23,4 @@ production:
   database: jiradb
   username: donat
   password: vo2max
-  host: www.kettlerusa.com
+  host: 172.20.1.200

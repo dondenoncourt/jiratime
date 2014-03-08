@@ -8,7 +8,7 @@ gem 'rails', '3.2.3'
 # denoncourt added
 #gem 'activerecord-jdbc-adapter'
 gem 'activerecord-jdbcmysql-adapter'
-gem 'jruby-openssl'
+gem 'jruby-openssl', '0.8.8'
 
 gem 'json'
 

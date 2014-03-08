@@ -1,6 +1,8 @@
 Jiratime::Application.routes.draw do
   get 'jiratime/:author/:year/:month', :controller => 'jiratime', :action => 'index',
       :requirements => { :author => /\w{2,10}/, :year => /\d{4}/, :month => /\d{1,2}/}
+  get ':author/:year/:month', :controller => 'jiratime', :action => 'index',
+      :requirements => { :author => /\w{2,10}/, :year => /\d{4}/, :month => /\d{1,2}/}
   get 'jiratime/store', controller: :jiratime, actin: :index
 
   # The priority is based upon order of creation:
